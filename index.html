@@ -1,1 +1,103 @@
-<p>Hello</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aatu Mäenpää - Portfolio - PACKY</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+      }
+      nav {
+        background: #444;
+        color: #fff;
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      section {
+        padding: 2rem;
+        margin: 1rem auto;
+        max-width: 800px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      .project {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Aatu Mäenpää - Portfolio - PACKY</h1>
+    </header>
+    <section id="about">
+      <h2>Meidän projekti - Packy</h2>
+      <p>
+        Olin mukana projektissa Packy joka oli siis verkkosovellus joka tarjoaa
+        työkaluja kehittäjille ja opiskelijoille. Packy auttaa käyttäjiä
+        löytämään teknologioita omia sovelluksia varten.
+      </p>
+    </section>
+    <section id="projects">
+      <h2>Roolit</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Project 1</h3>
+        </div>
+        <div class="project">
+          <h3>Project 2</h3>
+          <p>A brief description of your project.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+          <h3>Project 3</h3>
+          <p>A brief description of your project.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
