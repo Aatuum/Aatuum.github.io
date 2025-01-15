@@ -68,25 +68,29 @@
       .slider {
         position: relative;
         width: 100%;
-        max-width: 100%; /* Tämä varmistaa, että slider täyttää koko leveysalueen */
-        overflow: hidden; /* Piilottaa ylimääräiset osat */
+        max-width: 100%;
+        overflow: hidden;
         border: 2px solid #ddd;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center; /* Keskittää sliderin */
+        align-items: center; /* Keskittää kuvan pystysuunnassa */
       }
 
       /* Kuvien wrapper */
       .slider-wrapper {
         display: flex;
         transition: transform 0.3s ease-in-out;
+        align-items: center; /* Varmistaa, että kuvat ovat keskellä pystysuunnassa */
       }
 
       /* Kuvat */
       .slider-img {
-        width: 100%;
-        height: 100%; /* Täyttää koko säilön korkeusalueen */
-        object-fit: cover; /* Tämä varmistaa, että kuvat täyttävät koko tilan, mutta säilyttävät mittasuhteet */
-        flex-shrink: 0; /* Estää kuvien kutistumisen */
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Varmistaa, että kuvat pysyvät mittasuhteessa */
+        flex-shrink: 0;
       }
 
       /* Navigointipainikkeet */
