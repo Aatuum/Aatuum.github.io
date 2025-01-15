@@ -152,6 +152,58 @@
       <h2>Liiketoiminta tekemiset</h2>
       <img src="assets/bmc.png" alt="BMC" class="responsive-img" />
     </section>
+    <section id="about">
+      <h2>Koodi esimerkkejä</h2>
+      <pre>
+        <code>
+              const StackBuilder: PageLayout = () =&gt; {
+                const { activeCells } = useSelector(
+                  (state: RootState) =&gt; state.gridStateReducer
+                );
+                const libraryData = useSelector(
+                  (state: RootState) =&gt; state.libraryDataReducer
+                );
+    
+                const gridModalState = useSelector(
+                  (state: RootState) =&gt; state.gridModalReducer.value
+                );
+    
+                const outputModalState = useSelector(
+                  (state: RootState) =&gt; state.outputReducer.value
+                );
+    
+                const tutorialModalState = useSelector(
+                  (state: RootState) =&gt; state.tutorialReducer.isOpen
+                );
+    
+                const dispatch = useDispatch&lt;AppDispatch&gt;();
+    
+                const [isModalOpen, setIsModalOpen] = useState(gridModalState);
+                const [isLibraryOpen, setIsLibraryOpen] = useState(true);
+                const [isGridOpen, setIsGridOpen] = useState(false);
+                const [isOutputModalOpen, setIsOutputModalOpen] = useState(outputModalState);
+                const [isTutorialModalOpen, setIsTutorialModalOpen] =
+                  useState(tutorialModalState);
+    
+                const libraryButtonDisabled = libraryData.value.every(
+                  (item) =&gt; !item.checked
+                );
+                const gridButtonDisabled = activeCells.length &lt;= 1;
+    
+                const handlesetOutputModal = () =&gt; {
+                  if (outputModalState === false) {
+                    setIsOutputModalOpen(!isOutputModalOpen);
+                    dispatch(toggleOutputModal(true));
+                  } else {
+                    setIsOutputModalOpen(!isOutputModalOpen);
+                    dispatch(toggleOutputModal(false));
+                  }
+                };
+    
+                // ... Loput koodista ...
+        </code>
+      </pre>
+    </section>
 
     <section id="about">
       <h2>Oppimiset</h2>
