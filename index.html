@@ -64,6 +64,15 @@
         width: 100%;
         bottom: 0;
       }
+
+      .responsive-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -86,9 +95,9 @@
       </p>
       <p>
         Projektissa vastasin projektin liiketoiminnasta ja toimin mukana
-        frontend-kehittäjänä. Frontend kehittäjänä tein raakoja versioita tai
-        alku versioita eri sovelluksen sivuista. Kehitin eri sivujen funktioita
-        sekä toiminnalisuuksia. Lisäksi toimimaan silloin tällöin osana
+        frontend-kehittäjänä. Frontend kehittäjänä tein raakoja versioita eri
+        sovelluksen sivuista. Kehitin eri sivujen funktioita sekä
+        toiminnalisuuksia. Lisäksi työskentelin silloin tällöin osana
         Redux-tilahallintaa. Liiketoiminnassa pääsin työskentelemään eri
         kaavioiden parissa kuten BMC, VPC,oma oppimispäiväkirja, GDPR sekä
         osallistumaan TikoBiz kokouksiin jossa harjoiteltiin pitchausta ja
@@ -132,13 +141,6 @@
           <p>Ryhmätyöskentely projektissa Frontend-kehittäjänä</p>
         </div>
         <div class="project">
-          <h3>Mitä opin?</h3>
-          <p>Frontend kehittäminen Reactilla ja vielä enemmän Nextjs</p>
-          <p>Redux-tilahallinta</p>
-          <p>Liiketoimintaa projektissa</p>
-          <p>Frontend-kehittäjänä projektissa</p>
-        </div>
-        <div class="project">
           <h3>Käytetyt teknologiat</h3>
           <p>Redux-tilahallinta</p>
           <p>React - Nextjs</p>
@@ -148,7 +150,12 @@
     </section>
     <section id="about">
       <h2>Liiketoiminta tekemiset</h2>
-      <img src="assets/bmc.png" alt="BMC" />
+      <img src="assets/bmc.png" alt="BMC" class="responsive-img" />
+    </section>
+
+    <section id="about">
+      <h2>Oppimiset</h2>
+      <p>Tähän tulevaiduuesta</p>
     </section>
     <section id="about">
       <h2>Vahvuudet</h2>
