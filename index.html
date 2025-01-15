@@ -67,24 +67,26 @@
       /* Slider-tyylit */
       .slider {
         position: relative;
-        max-width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
+        width: 100%;
+        max-width: 100%; /* Tämä varmistaa, että slider täyttää koko leveysalueen */
+        overflow: hidden; /* Piilottaa ylimääräiset osat */
         border: 2px solid #ddd;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
 
+      /* Kuvien wrapper */
       .slider-wrapper {
         display: flex;
         transition: transform 0.3s ease-in-out;
       }
 
+      /* Kuvat */
       .slider-img {
         width: 100%;
-        height: auto; /* Kuvat skaalautuvat säilyttäen mittasuhteensa */
-        object-fit: cover; /* Tämä varmistaa, että kuvat täyttävät kokonaan elementin */
-        flex-shrink: 0; /* Varmistaa, että kuvat eivät veny tai kutistu */
+        height: 100%; /* Täyttää koko säilön korkeusalueen */
+        object-fit: cover; /* Tämä varmistaa, että kuvat täyttävät koko tilan, mutta säilyttävät mittasuhteet */
+        flex-shrink: 0; /* Estää kuvien kutistumisen */
       }
 
       /* Navigointipainikkeet */
