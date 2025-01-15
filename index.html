@@ -82,9 +82,12 @@
 
       .slider-img {
         width: 100%;
-        flex-shrink: 0;
+        height: auto; /* Kuvat skaalautuvat säilyttäen mittasuhteensa */
+        object-fit: cover; /* Tämä varmistaa, että kuvat täyttävät kokonaan elementin */
+        flex-shrink: 0; /* Varmistaa, että kuvat eivät veny tai kutistu */
       }
 
+      /* Navigointipainikkeet */
       button.prev-btn,
       button.next-btn {
         position: absolute;
@@ -111,7 +114,6 @@
       button.next-btn:hover {
         background-color: #000;
       }
-
       .image-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
