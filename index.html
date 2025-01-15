@@ -91,35 +91,13 @@
         max-height: 100%;
         object-fit: contain; /* Varmistaa, että kuvat pysyvät mittasuhteessa */
         flex-shrink: 0;
+        display: none; /* Aluksi kaikki kuvat piilossa */
       }
 
-      /* Navigointipainikkeet */
-      button.prev-btn,
-      button.next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50%;
+      .slider-img.active {
+        display: block; /* Vain aktiivinen kuva näkyy */
       }
 
-      button.prev-btn {
-        left: 10px;
-      }
-
-      button.next-btn {
-        right: 10px;
-      }
-
-      button.prev-btn:hover,
-      button.next-btn:hover {
-        background-color: #000;
-      }
       .image-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -261,8 +239,18 @@
 
     let currentIndex = 0;
 
+    // Asetetaan ensimmäinen kuva näkyviin alussa
+    images[currentIndex].classList.add('active');
+
     // Päivittää sliderin niin, että oikea kuva on näkyvissä
     const updateSlider = () => {
+      // Poistetaan "active" luokka kaikilta kuvilta
+      images.forEach((image) => image.classList.remove('active'));
+
+      // Asetetaan "active" luokka nykyiselle kuvalle
+      images[currentIndex].classList.add('active');
+
+      // Siirretään wrapperia niin, että oikea kuva tulee esiin
       const offset = -currentIndex * 100;
       sliderWrapper.style.transform = `translateX(${offset}%)`;
     };
