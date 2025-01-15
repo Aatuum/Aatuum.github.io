@@ -154,57 +154,45 @@
     </section>
     <section id="about">
       <h2>Koodi esimerkkejä</h2>
-      <pre>
-        <code>
-              const StackBuilder: PageLayout = () =&gt; {
-                const { activeCells } = useSelector(
-                  (state: RootState) =&gt; state.gridStateReducer
-                );
-                const libraryData = useSelector(
-                  (state: RootState) =&gt; state.libraryDataReducer
-                );
+      <button id="toggleButton" onclick="toggleCode()">Show Code</button>
+      <div id="codeContainer" style="display: none; margin-top: 1rem">
+        <pre>
+          <code>
+            const StackBuilder: PageLayout = () =&gt; {
+              const { activeCells } = useSelector(
+                (state: RootState) =&gt; state.gridStateReducer
+              );
+              const libraryData = useSelector(
+                (state: RootState) =&gt; state.libraryDataReducer
+              );
+              
+              const gridModalState = useSelector(
+                (state: RootState) =&gt; state.gridModalReducer.value
+              );
+              
+              const outputModalState = useSelector(
+                (state: RootState) =&gt; state.outputReducer.value
+              );
+              
+              const tutorialModalState = useSelector(
+                (state: RootState) =&gt; state.tutorialReducer.isOpen
+              );
+              
+              const dispatch = useDispatch&lt;AppDispatch&gt;();
+              
+              const [isModalOpen, setIsModalOpen] = useState(gridModalState);
+              const [isLibraryOpen, setIsLibraryOpen] = useState(true);
+              const [isGridOpen, setIsGridOpen] = useState(false);
+              const [isOutputModalOpen, setIsOutputModalOpen] = useState(outputModalState);
+              const [isTutorialModalOpen, setIsTutorialModalOpen] =
+                useState(tutorialModalState);
     
-                const gridModalState = useSelector(
-                  (state: RootState) =&gt; state.gridModalReducer.value
-                );
-    
-                const outputModalState = useSelector(
-                  (state: RootState) =&gt; state.outputReducer.value
-                );
-    
-                const tutorialModalState = useSelector(
-                  (state: RootState) =&gt; state.tutorialReducer.isOpen
-                );
-    
-                const dispatch = useDispatch&lt;AppDispatch&gt;();
-    
-                const [isModalOpen, setIsModalOpen] = useState(gridModalState);
-                const [isLibraryOpen, setIsLibraryOpen] = useState(true);
-                const [isGridOpen, setIsGridOpen] = useState(false);
-                const [isOutputModalOpen, setIsOutputModalOpen] = useState(outputModalState);
-                const [isTutorialModalOpen, setIsTutorialModalOpen] =
-                  useState(tutorialModalState);
-    
-                const libraryButtonDisabled = libraryData.value.every(
-                  (item) =&gt; !item.checked
-                );
-                const gridButtonDisabled = activeCells.length &lt;= 1;
-    
-                const handlesetOutputModal = () =&gt; {
-                  if (outputModalState === false) {
-                    setIsOutputModalOpen(!isOutputModalOpen);
-                    dispatch(toggleOutputModal(true));
-                  } else {
-                    setIsOutputModalOpen(!isOutputModalOpen);
-                    dispatch(toggleOutputModal(false));
-                  }
-                };
-    
-                // ... Loput koodista ...
-        </code>
-      </pre>
+              // Rest of the code...
+            };
+          </code>
+        </pre>
+      </div>
     </section>
-
     <section id="about">
       <h2>Oppimiset</h2>
       <p>Tähän tulevaiduuesta</p>
@@ -226,3 +214,17 @@
     </section>
   </body>
 </html>
+
+<script>
+  function toggleCode() {
+    const container = document.getElementById('codeContainer');
+    const button = document.getElementById('toggleButton');
+    if (container.style.display === 'none') {
+      container.style.display = 'block';
+      button.textContent = 'Hide Code';
+    } else {
+      container.style.display = 'none';
+      button.textContent = 'Show Code';
+    }
+  }
+</script>
