@@ -111,7 +111,56 @@
       button.next-btn:hover {
         background-color: #000;
       }
+      /* General styles for the slider-toggle buttons */
+      .slider-toggle {
+        background-color: #4caf50; /* Green background */
+        color: white; /* White text */
+        border: none; /* Remove border */
+        padding: 10px 20px; /* Padding for size */
+        margin: 5px; /* Space between buttons */
+        font-size: 16px; /* Text size */
+        cursor: pointer; /* Pointer cursor on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+      }
 
+      /* Hover effect */
+      .slider-toggle:hover {
+        background-color: #45a049; /* Darker green on hover */
+        transform: scale(1.05); /* Slight zoom effect */
+      }
+
+      /* Focus effect (for accessibility) */
+      .slider-toggle:focus {
+        outline: none; /* Remove default focus outline */
+        box-shadow: 0 0 0 3px rgba(72, 162, 80, 0.5); /* Light green shadow */
+      }
+
+      /* Active effect (when clicked) */
+      .slider-toggle:active {
+        background-color: #388e3c; /* Even darker green when active */
+        transform: scale(1); /* Reset zoom on click */
+      }
+
+      /* Style for the button container (optional) */
+      .slider-menu {
+        display: flex; /* Arrange buttons in a row */
+        justify-content: center; /* Center align the buttons */
+        margin-bottom: 20px; /* Space below the buttons */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .slider-toggle {
+          padding: 8px 15px; /* Smaller padding on smaller screens */
+          font-size: 14px; /* Smaller text on smaller screens */
+        }
+
+        .slider-menu {
+          flex-direction: column; /* Stack buttons vertically on small screens */
+          align-items: center; /* Center align buttons */
+        }
+      }
       .image-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -219,7 +268,7 @@
 
       <!-- Stackbuilder Slider -->
       <div id="stackbuilder" class="slider-content" style="display: none">
-        <h3>Koodi esimerkkejä - Stackbuilder</h3>
+        <h3>Stackbuilder</h3>
         <div class="slider">
           <div class="slider-wrapper">
             <img src="assets/stackbuilder1.png" alt="sb1" class="slider-img" />
@@ -236,7 +285,7 @@
 
       <!-- Expandfield Slider -->
       <div id="expandfield" class="slider-content" style="display: none">
-        <h3>Koodi esimerkkejä - Expandfield (Library)</h3>
+        <h3>Expandfield (Library)</h3>
         <div class="slider">
           <div class="slider-wrapper">
             <img src="assets/expand1.png" alt="ex1" class="slider-img" />
