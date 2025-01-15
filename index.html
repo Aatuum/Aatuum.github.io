@@ -249,21 +249,7 @@
         </div>
       </div>
     </section>
-    <section id="about">
-      <h2>Oppimiset</h2>
-      <p>Tähän tulevaiduuesta</p>
-    </section>
-    <section id="about">
-      <h2>Vahvuudet</h2>
-      <p>
-        Omat vahvuudet olivat ennen ticorporatea ehdottomasti Backend
-        koodaamisessa kuin Frontendissä. Kuitenkin nyt ticorporaten jälkeen
-        Frontend on kehittynyt enemmän kuin Backend mutta mielestäni kyllä
-        molemmat ovat samalla tasolla. Ticorporaten aikana sain todella paljon
-        oppia Frontend-kehityksestä ja Reactista. Backend-kehityksestä sain
-        hieman oppia mutta en niin paljoa koska ei ollut minun vastuualueeni.
-      </p>
-    </section>
+
     <section id="about">
       <h2>Tulevaisuus</h2>
       <p>Tähän tulevaiduuesta</p>
@@ -277,7 +263,7 @@
   // Select all the slider content sections
   const sliderContents = document.querySelectorAll('.slider-content');
 
-  // Add event listeners to the buttons
+  // Function to handle slider switching
   sliderButtons.forEach((button) => {
     button.addEventListener('click', function () {
       const target = this.getAttribute('data-target');
@@ -291,7 +277,45 @@
       const selectedSlider = document.getElementById(target);
       if (selectedSlider) {
         selectedSlider.style.display = 'block';
+
+        // Initialize or reset the slider on display
+        initializeSlider(selectedSlider);
       }
     });
   });
+
+  // Function to initialize the slider and handle next/prev buttons
+  function initializeSlider(sliderContainer) {
+    const wrapper = sliderContainer.querySelector('.slider-wrapper');
+    const images = wrapper.querySelectorAll('.slider-img');
+    let currentIndex = 0;
+
+    // Display the first image initially
+    images.forEach((image, index) => {
+      image.style.display = index === currentIndex ? 'block' : 'none';
+    });
+
+    // Select next and prev buttons
+    const prevButton = sliderContainer.querySelector('.prev-btn');
+    const nextButton = sliderContainer.querySelector('.next-btn');
+
+    // Handle "Previous" button click
+    prevButton.addEventListener('click', () => {
+      currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+      updateSliderDisplay(images, currentIndex);
+    });
+
+    // Handle "Next" button click
+    nextButton.addEventListener('click', () => {
+      currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+      updateSliderDisplay(images, currentIndex);
+    });
+  }
+
+  // Function to update the displayed image
+  function updateSliderDisplay(images, currentIndex) {
+    images.forEach((image, index) => {
+      image.style.display = index === currentIndex ? 'block' : 'none';
+    });
+  }
 </script>
