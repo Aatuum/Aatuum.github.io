@@ -206,38 +206,49 @@
       <img src="assets/bmc.png" alt="BMC" class="responsive-img" />
     </section>
     <section id="about">
-      <h2>Koodi esimerkkejä - Stackbuilder</h2>
-      <!-- Kuvagalleria -->
-      <div class="slider">
-        <div class="slider-wrapper">
-          <img src="assets/stackbuilder1.png" alt="sb1" class="slider-img" />
-          <img src="assets/stackbuilder2.png" alt="sb2" class="slider-img" />
-          <img src="assets/stackbuilder3.png" alt="sb3" class="slider-img" />
-          <img src="assets/stackbuilder4.png" alt="sb4" class="slider-img" />
-          <img src="assets/stackbuilder5.png" alt="sb5" class="slider-img" />
-          <img src="assets/stackbuilder6.png" alt="sb6" class="slider-img" />
-        </div>
-        <!-- Navigointipainikkeet -->
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
+      <h2>Koodi esimerkkejä</h2>
+      <!-- Slider Menu -->
+      <div class="slider-menu">
+        <button class="slider-toggle" data-target="stackbuilder">
+          Stackbuilder
+        </button>
+        <button class="slider-toggle" data-target="expandfield">
+          Expandfield (Library)
+        </button>
       </div>
-    </section>
-    <section id="about">
-      <h2>Koodi esimerkkejä - Expandfield (Library)</h2>
-      <!-- Kuvagalleria -->
-      <div class="slider">
-        <div class="slider-wrapper">
-          <img src="assets/expand1.png" alt="ex1" class="slider-img" />
-          <img src="assets/expand2.png" alt="ex2" class="slider-img" />
-          <img src="assets/expand3.png" alt="ex3" class="slider-img" />
-          <img src="assets/expand4.png" alt="ex4" class="slider-img" />
-        </div>
-        <!-- Navigointipainikkeet -->
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
-      </div>
-    </section>
 
+      <!-- Stackbuilder Slider -->
+      <div id="stackbuilder" class="slider-content" style="display: none">
+        <h3>Koodi esimerkkejä - Stackbuilder</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <img src="assets/stackbuilder1.png" alt="sb1" class="slider-img" />
+            <img src="assets/stackbuilder2.png" alt="sb2" class="slider-img" />
+            <img src="assets/stackbuilder3.png" alt="sb3" class="slider-img" />
+            <img src="assets/stackbuilder4.png" alt="sb4" class="slider-img" />
+            <img src="assets/stackbuilder5.png" alt="sb5" class="slider-img" />
+            <img src="assets/stackbuilder6.png" alt="sb6" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
+        </div>
+      </div>
+
+      <!-- Expandfield Slider -->
+      <div id="expandfield" class="slider-content" style="display: none">
+        <h3>Koodi esimerkkejä - Expandfield (Library)</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <img src="assets/expand1.png" alt="ex1" class="slider-img" />
+            <img src="assets/expand2.png" alt="ex2" class="slider-img" />
+            <img src="assets/expand3.png" alt="ex3" class="slider-img" />
+            <img src="assets/expand4.png" alt="ex4" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
+        </div>
+      </div>
+    </section>
     <section id="about">
       <h2>Oppimiset</h2>
       <p>Tähän tulevaiduuesta</p>
@@ -260,27 +271,27 @@
   </body>
 </html>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    const images = document.querySelectorAll('.slider-img');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+  // Select all the toggle buttons
+  const sliderButtons = document.querySelectorAll('.slider-toggle');
 
-    let currentIndex = 0;
+  // Select all the slider content sections
+  const sliderContents = document.querySelectorAll('.slider-content');
 
-    const updateSlider = () => {
-      const offset = -currentIndex * 100;
-      sliderWrapper.style.transform = `translateX(${offset}%)`;
-    };
+  // Add event listeners to the buttons
+  sliderButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      const target = this.getAttribute('data-target');
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateSlider();
-    });
+      // Hide all sliders
+      sliderContents.forEach((content) => {
+        content.style.display = 'none';
+      });
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateSlider();
+      // Show the selected slider
+      const selectedSlider = document.getElementById(target);
+      if (selectedSlider) {
+        selectedSlider.style.display = 'block';
+      }
     });
   });
 </script>
