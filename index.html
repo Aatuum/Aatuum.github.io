@@ -5,176 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aatu Mäenpää - Portfolio - PACKY</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-      }
-      header {
-        background: #333;
-        color: #fff;
-        padding: 1rem 0;
-        text-align: center;
-      }
-      header h1 {
-        margin: 0;
-      }
-      nav {
-        background: #444;
-        color: #fff;
-        padding: 0.5rem 0;
-        text-align: center;
-      }
-      nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      section {
-        padding: 2rem;
-        margin: 1rem auto;
-        max-width: 800px;
-      }
-      h2 {
-        text-align: center;
-        color: #333;
-      }
-      .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-      }
-      .project {
-        border: 1px solid #ddd;
-        padding: 1rem;
-        border-radius: 5px;
-        text-align: center;
-      }
-      footer {
-        background: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1rem 0;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-      }
-      /* Slider-tyylit */
-      .slider {
-        position: relative;
-        max-width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-      .slider-wrapper {
-        display: flex;
-        transition: transform 0.3s ease-in-out;
-      }
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
 
-      .slider-img {
-        width: 100%;
-        flex-shrink: 0;
-      }
+header h1 {
+  margin: 0;
+}
 
-      button.prev-btn,
-      button.next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50%;
-      }
+nav {
+  background: #444;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center;
+}
 
-      button.prev-btn {
-        left: 10px;
-      }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
 
-      button.next-btn {
-        right: 10px;
-      }
+nav a:hover {
+  text-decoration: underline;
+}
 
-      button.prev-btn:hover,
-      button.next-btn:hover {
-        background-color: #000;
-      }
-      /* General styles for the slider-toggle buttons */
-      .slider-toggle {
-        background-color: lightskyblue;
-        color: black; /* White text */
-        border: none; /* Remove border */
-        padding: 10px 20px; /* Padding for size */
-        margin: 5px; /* Space between buttons */
-        font-size: 16px; /* Text size */
-        cursor: pointer; /* Pointer cursor on hover */
-        border-radius: 5px; /* Rounded corners */
-        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
-      }
+section {
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
+}
 
-      /* Hover effect */
-      .slider-toggle:hover {
-        background-color: grey; /* Darker green on hover */
-        transform: scale(1.05); /* Slight zoom effect */
-      }
+h2 {
+  text-align: center;
+  color: #333;
+}
 
-      /* Focus effect (for accessibility) */
-      .slider-toggle:focus {
-        outline: none; /* Remove default focus outline */
-        box-shadow: 0 0 0 3px rgba(72, 162, 80, 0.5); /* Light green shadow */
-      }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
 
-      /* Active effect (when clicked) */
-      .slider-toggle:active {
-        background-color: lightskyblue; /* Even darker green when active */
-        transform: scale(1); /* Reset zoom on click */
-      }
+.project {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-      /* Style for the button container (optional) */
-      .slider-menu {
-        display: flex; /* Arrange buttons in a row */
-        justify-content: center; /* Center align the buttons */
-        margin-bottom: 20px; /* Space below the buttons */
-      }
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
 
-      /* Responsive adjustments */
-      @media (max-width: 600px) {
-        .slider-toggle {
-          padding: 8px 15px; /* Smaller padding on smaller screens */
-          font-size: 14px; /* Smaller text on smaller screens */
-        }
+/* Slider styles */
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-        .slider-menu {
-          flex-direction: column; /* Stack buttons vertically on small screens */
-          align-items: center; /* Center align buttons */
-        }
-      }
-      .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-      }
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
 
-      .responsive-img {
-        width: 100%;
-        height: auto;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-      }
+.slider-img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+button.prev-btn,
+button.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+button.prev-btn {
+  left: 10px;
+}
+
+button.next-btn {
+  right: 10px;
+}
+
+button.prev-btn:hover,
+button.next-btn:hover {
+  background-color: #000;
+}
+
+/* Slider toggle buttons */
+.slider-toggle {
+  background-color: lightskyblue;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slider-toggle:hover {
+  background-color: grey;
+  transform: scale(1.05);
+}
+
+.slider-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 162, 80, 0.5);
+}
+
+.slider-toggle:active {
+  background-color: lightskyblue;
+  transform: scale(1);
+}
+
+.slider-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .slider-toggle {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .slider-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
     </style>
   </head>
   <body>
