@@ -295,53 +295,141 @@
     </section>
     <section id="about">
       <h2>Koodi esimerkkejä</h2>
+      <!-- Slider Menu -->
+      <div class="slider-menu">
+        <button class="slider-toggle" data-target="cell_logic">
+          Choosable Cell Logic
+        </button>
+        <button class="slider-toggle" data-target="stackbuilder">
+          Stackbuilder
+        </button>
+        </button>
+        <button class="slider-toggle" data-target="expandfield">
+          Expandfield - Library
+        </button>
+        <button class="slider-toggle" data-target="liiketoiminta">
+          Liiketoiminta
+        </button>
+        <button class="slider-toggle" data-target="buttons">
+          Grid Buttons
+        </button>
+      </div>
 
-      <!-- Kuva Menu -->
-      <div class="image-menu">
-        <div class="image-item">
-          <button class="menu-toggle">Choosable Cell Logic</button>
-          <img
-            src="assets/choosable_cell_logic.png"
-            alt="Choosable Cell Logic Example"
-            class="menu-image"
-          />
-          <p>Kuvaus: Tämä näyttää valittavan solulogiikan toteutuksen.</p>
+      <!-- Stackbuilder Slider -->
+      <div id="cell_logic" class="slider-content" style="display: none">
+        <h3>Choosable Cell Logic</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <div>
+              <img src="assets/cell_logic.png" alt="cb1" class="slider-img" />
+              <p>
+                Vaikeuksia oli saada oikein toimimaan, mutta tässä logiikka
+                miten stackbuilderissa olevat "solut" aktivoituvat
+              </p>
+            </div>
+            <div>
+              <img
+                src="assets/cell_logic_reducer.png"
+                alt="cbr1"
+                class="slider-img"
+              />
+              <p>
+                Reducer joka hoiti cellien tilan ja muisti ne vaikka sivulta
+                lähti.
+              </p>
+            </div>
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
         </div>
-        <div class="image-item">
-          <button class="menu-toggle">Stackbuilder</button>
-          <img
-            src="assets/stackbuilder.png"
-            alt="Stackbuilder Example"
-            class="menu-image"
-          />
-          <p>Kuvaus: Tämä kuva esittää Stackbuilderin toiminnallisuutta.</p>
+      </div>
+
+      <div id="stackbuilder" class="slider-content" style="display: none">
+        <h3>Päätoiminto - Stackbuilder</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <div>
+              <img src="assets/stackbuilder1.png" alt="sb1" class="slider-img" />
+              <img src="assets/stackbuilder2.png" alt="sb2" class="slider-img" />
+              <img src="assets/stackbuilder3.png" alt="sb3" class="slider-img" />
+              <img src="assets/stackbuilder4.png" alt="sb4" class="slider-img" />
+              <img src="assets/stackbuilder5.png" alt="sb5" class="slider-img" />
+              <img src="assets/stackbuilder6.png" alt="sb6" class="slider-img" />
+            </div>
+
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
         </div>
-        <div class="image-item">
-          <button class="menu-toggle">Expandfield - Library</button>
-          <img
-            src="assets/expandfield_library.png"
-            alt="Expandfield Example"
-            class="menu-image"
-          />
-          <p>Kuvaus: Expandfield-kirjasto käytännössä.</p>
+      </div>
+      <div id="expandfield" class="slider-content" style="display: none">
+        <h3>Expandfield (Library)</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <div>
+              <img src="assets/main_expand.png" alt="ex1" class="slider-img" />
+              <p></p>
+            </div>
+
+            <img src="assets/expand1.png" alt="ex1" class="slider-img" />
+            <img src="assets/expand2.png" alt="ex2" class="slider-img" />
+            <img src="assets/expand3.png" alt="ex3" class="slider-img" />
+            <img src="assets/expand4.png" alt="ex4" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
         </div>
-        <div class="image-item">
-          <button class="menu-toggle">Liiketoiminta</button>
-          <img
-            src="assets/liiketoiminta.png"
-            alt="Liiketoiminta Example"
-            class="menu-image"
-          />
-          <p>Kuvaus: Liiketoiminnan prosessikaavio.</p>
+      </div>
+      <div id="expandfield" class="slider-content" style="display: none">
+        <h3>Expandfield (Library)</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <div>
+              <img src="assets/main_expand.png" alt="ex1" class="slider-img" />
+              <p></p>
+            </div>
+
+            <img src="assets/expand1.png" alt="ex1" class="slider-img" />
+            <img src="assets/expand2.png" alt="ex2" class="slider-img" />
+            <img src="assets/expand3.png" alt="ex3" class="slider-img" />
+            <img src="assets/expand4.png" alt="ex4" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
         </div>
-        <div class="image-item">
-          <button class="menu-toggle">Grid Buttons</button>
-          <img
-            src="assets/grid_buttons.png"
-            alt="Grid Buttons Example"
-            class="menu-image"
-          />
-          <p>Kuvaus: Grid-painikkeiden asetteluesimerkki.</p>
+      </div>
+
+      <!-- Expandfield Slider -->
+      <div id="liiketoiminta" class="slider-content" style="display: none">
+        <h3>Liiketoiminta</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <img src="assets/bmc.png" alt="ex1" class="slider-img" />
+            <img
+              src="assets/VPC_arvioilupaus.png"
+              alt="vpc"
+              class="slider-img"
+            />
+            <img src="assets/instagram.png" alt="ig" class="slider-img" />
+            <img src="assets/tietosuoja.png" alt="ts" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
+        </div>
+      </div>
+
+      <div id="buttons" class="slider-content" style="display: none">
+        <h3>Grid Buttons</h3>
+        <div class="slider">
+          <div class="slider-wrapper">
+            <img src="assets/gridbutton1.png" alt="gb1" class="slider-img" />
+            <img src="assets/gridbutton2.png" alt="gb2" class="slider-img" />
+            <img src="assets/gridbutton3.png" alt="gb3" class="slider-img" />
+            <img src="assets/gridbutton4.png" alt="gb4" class="slider-img" />
+            <img src="assets/gridbutton5.png" alt="gb5" class="slider-img" />
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
         </div>
       </div>
     </section>
